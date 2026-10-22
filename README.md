@@ -8,11 +8,19 @@ This is the code repository for the paper "Annotators of a Feather FLOCKE Togeth
 
 ---
 
-FLOCKE is a framework for datasets with disaggregated annotations. It learns the task together with a small number of **latent annotator groups**: groups of people who label in a similar way. The groups are found from labeling behavior alone, without relying on socio-demographics.
+FLOCKE is a framework for datasets with disaggregated annotations (it is available as a Python package: [`flocke`](https://pypi.org/project/flocke/)). It learns the task together with a small number of **latent annotator groups**: groups of people who label in a similar way. The groups are found from labeling behavior alone, without relying on socio-demographics.
 
+
+## Tutorial Notebooks
+Two short tutorials in [`notebooks/`](notebooks/):
+- [`01_using_flocke.ipynb`](notebooks/01_using_flocke.ipynb): apply FLOCKE to any disaggregated annotations, choose the number of groups, inspect the groups, and evaluate with your metrics.
+- [`02_validation_framework.ipynb`](notebooks/02_validation_framework.ipynb): use the synthetic HateCheck benchmark to evaluate any method.
+
+
+## Reproducing the Paper's Experiments
 This repository contains the code around FLOCKE for reproducing the paper's experiments.
 
-## Data
+### Data
 Follow the instructions in the [data/README.md](data/README.md) file to download and prepare the datasets. In short:
 
 ```bash
@@ -28,7 +36,7 @@ data/
   MD/MD_train.json, MD_dev.json, MD_test.json
 ```
 
-## 🪶 Preparation
+### 🪶 Preparation
 The code is based on Python **3.12.11**. Using your preferred package manager, create a virtual environment, e.g., with uv:
 ```bash
 uv sync
@@ -44,14 +52,14 @@ pip install -r requirements.txt
 > `pyproject.toml` installs the CUDA 12.6 build of PyTorch. FLOCKE itself is lightweight and can also train and run on CPU.
 
 
-## 🐣 Validation
+### 🐣 Validation
 ```bash
 python validation.py
 ```
 On real data there is no ground truth for annotator groups, so this script builds a synthetic benchmark (based on [HateCheck](https://huggingface.co/datasets/Paul/hatecheck)) where the groups are known, and checks whether FLOCKE can recover them.
 
 
-## 🦜 Experiments on Real Data
+### 🦜 Experiments on Real Data
 ```bash
 python experiments.py
 ```

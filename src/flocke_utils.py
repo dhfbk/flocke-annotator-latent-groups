@@ -54,6 +54,7 @@ class FlockeExperiment():
 
     _tokenizer_cache = {}
     _embedder_cache = {}
+    _device_reported = False
 
     def __init__(self,
                  model_config: dict | None = None,
@@ -121,7 +122,9 @@ class FlockeExperiment():
                 self.embedder = AutoModel.from_pretrained(embedder_name).eval()
                 self._embedder_cache[embedder_name] = self.embedder
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        print(f"Using device: {self.device}")
+        if not FlockeExperiment._device_reported: # Report once per process, not for every experiment
+            print(f"Using device: {self.device}")
+            FlockeExperiment._device_reported = True
         # Move embedder to correct device. SentenceTransformer.to accepts a string or torch.device.
         try:
             # Some embedder objects accept string device names, convert accordingly
