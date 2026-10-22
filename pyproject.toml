@@ -1,0 +1,34 @@
+[project]
+name = "flocke-annotator-latent-groups"
+version = "0.1.0"
+description = "Code for the paper 'Annotators of a Feather FLOCKE Toghether: A Framework to Analyze Latent Group Patterns Based on Annotator Behavior'"
+readme = "README.md"
+requires-python = "==3.12.11"
+dependencies = [
+    "datasets>=4.8.4,<5.0.0",
+    "flocke>=0.1.0",
+    "ipython>=8.14.1,<9.0.0",
+    "matplotlib>=3.10.5,<4.0.0",
+    "notebook>=7.4.5,<8.0.0",
+    "numpy>=2.3.2,<3.0.0",
+    "ollama>=0.6.1,<0.7.0",
+    "pandas>=3.0.3,<4.0.0",
+    "pot>=0.9.6,<0.10.0",
+    "pytest>=8.4.1,<9.0.0",
+    "scikit-learn>=1.8.0,<2.0.0",
+    "scipy>=1.16.1,<2.0.0",
+    "seaborn>=0.13.2,<0.14.0",
+    "sentence-transformers>=5.5.1,<6.0.0",
+    "torch>=2.7.1,<3.0.0",
+    "tqdm>=4.68.2,<5.0.0",
+    "transformers>=5.1.0,<6.0.0",
+]
+
+# CUDA 12.6 build of torch: the default PyPI wheel (CUDA 13) needs a newer NVIDIA driver than 535 (CUDA 12.2)
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
