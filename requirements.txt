@@ -79,7 +79,7 @@ filelock==3.32.2
     #   datasets
     #   huggingface-hub
     #   torch
-flocke==0.1.0
+flocke==0.1.1
     # via -r requirements.in
 fonttools==4.63.0
     # via matplotlib
