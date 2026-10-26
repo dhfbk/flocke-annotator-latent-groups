@@ -2,7 +2,7 @@
 
 This is the code repository for the paper "Annotators of a Feather FLOCKE Together: A Framework to Analyze Latent Group Patterns Based on Annotator Behavior" by Giovanni Valer, Elisa Leonardelli, Camilla Casula, Sara Tonelli, and Michele Lombardi (EMNLP 2026).
 
-[![PDF](https://img.shields.io/badge/PDF-Download-red?style=flat&logo=googledocs&logoColor=white)](FLOCKE_paper.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Read-red?style=flat&logo=googledocs&logoColor=white)](https://aclanthology.org/2026.emnlp-main.2665.pdf)
 [![PyPI](https://img.shields.io/badge/PyPI-flocke-blue?style=flat&logo=pypi&logoColor=white)](https://pypi.org/project/flocke/)
 [![Citation](https://img.shields.io/badge/Citation-EMNLP_2026-orange?style=flat&logo=google-scholar&logoColor=white)](#citation)
 
@@ -73,11 +73,16 @@ This script applies FLOCKE to two binary classification datasets with disaggrega
 If you use this code in your research, please cite the following paper:
 ```bibtex
 @inproceedings{valer-etal-2026-annotators,
-    title={Annotators of a Feather {FLOCKE} Together: A Framework to Analyze Latent Group Patterns Based on Annotator Behavior},
-    author={Valer, Giovanni and Leonardelli, Elisa and Casula, Camilla and Tonelli, Sara and Lombardi, Michele},
-    booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
-    year={2026},
-    address={Budapest, Hungary},
+    title = "Annotators of a Feather {FLOCKE} Together: A Framework to Analyze Latent Group Patterns Based on Annotator Behavior",
+    author = "Valer, Giovanni  and Leonardelli, Elisa  and Casula, Camilla  and Tonelli, Sara  and Lombardi, Michele",
+    editor = "Lee, Hung-Yi  and Dev, Sunipa  and Li, Jessy  and Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
     publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.2665/",
+    pages = "60662--60676",
+    ISBN = "979-8-89176-459-0",
 }
 ```
